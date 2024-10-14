@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter with GIF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #counter {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Add your GIF here -->
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW9xODRoMTBsdWxkcWdpbWZheHJmY2t1MGsweXJiM3R0bGVpODFreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EYkWy4vU0zNLO/giphy.gif" alt="Funny GIF">
+
+    <button id="clickBtn">Click Me!</button>
+    <button id="resetBtn">Reset Count</button>
+    <div id="counter">You clicked 0 times</div>
+
+    <script>
+        // Retrieve the stored count from localStorage, or start at 0 if not found
+        let count = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+
+        // Update the display with the current count
+        const counterDisplay = document.getElementById('counter');
+        counterDisplay.textContent = `You clicked ${count} times`;
+
+        // Handle the click button to increment the count
+        document.getElementById('clickBtn').addEventListener('click', function() {
+            count++;
+            // Update the display
+            counterDisplay.textContent = `You clicked ${count} times`;
+            // Save the updated count to localStorage
+            localStorage.setItem('clickCount', count);
+        });
+
+        // Handle the reset button to clear the count
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            count = 0;
+            // Update the display
+            counterDisplay.textContent = `You clicked ${count} times`;
+            // Reset the count in localStorage
+            localStorage.setItem('clickCount', count);
+        });
+    </script>
+    
+</body>
+</html>
+
