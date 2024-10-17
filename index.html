@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Counter with GIF</title>
+    <title>MHAQ Counter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,9 +50,9 @@
     <!-- Add your GIF here -->
     <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW9xODRoMTBsdWxkcWdpbWZheHJmY2t1MGsweXJiM3R0bGVpODFreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EYkWy4vU0zNLO/giphy.gif" alt="Funny GIF">
 
-    <button id="clickBtn">Click Me!</button>
+    <button id="clickBtn">MHAQ</button>
     <button id="resetBtn">Reset Count</button>
-    <div id="counter">You clicked 0 times</div>
+    <div id="counter">MHAQ happened 0 times</div>
 
     <script>
         // Retrieve the stored count from localStorage, or start at 0 if not found
@@ -66,7 +66,7 @@
         document.getElementById('clickBtn').addEventListener('click', function() {
             count++;
             // Update the display
-            counterDisplay.textContent = `You clicked ${count} times`;
+            counterDisplay.textContent = `MHAQ happened ${count} times`;
             // Save the updated count to localStorage
             localStorage.setItem('clickCount', count);
         });
